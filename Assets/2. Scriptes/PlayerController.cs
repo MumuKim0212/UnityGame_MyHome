@@ -5,16 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody playerRigidbody;
-    public Manager manager;
-    void Start()
-    {
-        playerRigidbody = GetComponent<Rigidbody>();
-    }
+    public int endingScene;
 
-    void Update()
-    {
-    }
     public void Die()
     {
         gameObject.SetActive(false);
@@ -27,7 +19,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Goal")
         {
 
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(endingScene);
 
         }
     }
